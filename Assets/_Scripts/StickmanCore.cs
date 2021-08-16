@@ -7,24 +7,22 @@ using UnityEngine.AI;
 public class StickmanCore : MonoBehaviour
 {
     #region Variables
-    [Header("Core Settings")]
-    [SerializeField] private Transform _lettersRoot;
+    //[Header("Core Settings")]
 
-    //public List<Letter> MyLetters { get; private set; }
-    //[SerializeField] private List<GameObject> emptyTabels = new List<GameObject>();
     public bool CanMove { get; private set; }
     public Status LifeStatus { get; private set; }
     public bool IsPlayer { get; protected set; }
-   // public GameObject _tabel;
 
+    [SerializeField] private List<GameObject> _emptyTables = new List<GameObject>();
     private CharacterController _myController;
     private Animator _myAnimator;
     private Rigidbody[] _bodyRigidbodies;
     private Vector3 _velocity;
     private float _playerSpeed = 12f;
-    private int _tabelsCount = 3;
+    private int _tablesCount;
     private int _randomNumber;
-    private GameObject _enteredTabel;
+    private GameObject _enteredTable;
+    [SerializeField] private GameObject Text;
     #endregion
 
     #region UnityMethods
@@ -34,7 +32,6 @@ public class StickmanCore : MonoBehaviour
         _bodyRigidbodies = GetComponentsInChildren<Rigidbody>();
         _myController = GetComponent<CharacterController>();
 
-        //MyLetters = new List<Letter>();
         CanMove = true;
         LifeStatus = Status.Live;
 
@@ -42,22 +39,42 @@ public class StickmanCore : MonoBehaviour
         ChangeMass(20f);
     }
 
+    public virtual void Start()
+    {
+        /*for (int i = 0; i <= _tablesCount; i++)
+        {
+            _emptyTables.Add(GameObject.FindGameObjectWithTag("Table"));
+        }*/
+
+        _tablesCount = _emptyTables.Count + 1;
+    }
+
+    private IEnumerator _timeToDelivering()
+    {
+        
+        yield return new WaitForSeconds(1f);
+        if (LifeStatus == Status.DeliveringOrder)
+        {
+            Debug.Log("Ð¢Ñ‹ Ð¾Ð¿Ð¾Ð·Ð´Ð°Ð»!");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerShop") && LifeStatus != Status.DeliveringOrder)
         {
-            _randomNumber = Random.Range(0, _tabelsCount);
-            _enteredTabel = NewBehaviourScript.emptyTabels[_randomNumber];
-            NewBehaviourScript.emptyTabels.RemoveAt(_randomNumber);
-            _enteredTabel.tag = "Delivering";
+            _randomNumber = Random.Range(0, _tablesCount);
+            _enteredTable = _emptyTables[_randomNumber];
+            _enteredTable.tag = "Delivering";
             LifeStatus = Status.DeliveringOrder;
             Debug.Log(_randomNumber);
         }
         else if (other.CompareTag("Delivering") && LifeStatus == Status.DeliveringOrder)
         {
-            other.tag = "Tabel";
+            other.tag = "Untagged";
             LifeStatus = Status.Live;
-            Debug.Log("Çàêàç äîñòàâëåí!");
+            Text.SetActive(true);
+            Debug.Log("Ð—Ð°ÐºÐ°Ð· Ð´Ð¾ÑÑ‚Ð°Ð²Ð»ÐµÐ½!");
         }
     }
     #endregion

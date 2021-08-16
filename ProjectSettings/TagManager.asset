@@ -5,10 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stickman
-  - SpawnPoint
-  - Tabel
   - PlayerShop
   - Delivering
+  - Table
   layers:
   - Default
   - TransparentFX

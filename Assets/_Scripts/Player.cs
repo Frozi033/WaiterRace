@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : StickmanCore
 {
+    void Start()
+    {
+        
+    }
     void Update()
     {
         Move();

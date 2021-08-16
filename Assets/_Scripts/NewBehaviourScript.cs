@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public List<GameObject> emptyTabels = new List<GameObject>();
-    public GameObject r;
+    void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Delivering").transform == null)
+        {
+            transform.LookAt(GameObject.FindGameObjectWithTag("PlayerShop").transform);
+            //Debug.Log(GameObject.FindGameObjectWithTag("Delivering").transform);
+        }
+        else
+        {
+            transform.LookAt(GameObject.FindGameObjectWithTag("Delivering").transform);
+        }
+    }
 }
