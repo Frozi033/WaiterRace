@@ -95,7 +95,7 @@
      <Compile Include="Assets\Third-party\LunarConsole\Scripts\Utils\Iterator.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\ColorPicker\SVBoxSlider.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Layout\FancyScrollView\GridView\FancyGridViewContext.cs" />
-     <Compile Include="Assets\_Scripts\Player\Enemy.cs" />
+     <Compile Include="Assets\_Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Effects\MonoSpacing.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\Accordion\Tweening\FloatTween.cs" />
      <Compile Include="Assets\Third-party\NavMeshSurface\Examples\Scripts\DungeonManager.cs" />
@@ -154,9 +154,9 @@
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\RescalingPanels\RescalePanel.cs" />
      <Compile Include="Assets\Third-party\Epic Toon FX\Demo\ParticleEffectsShowcase\Scripts\UICanvasManager.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\ReturnKeyTriggersButton.cs" />
+     <Compile Include="Assets\_Scripts\Map\Tables\KitchenLogic.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\UI_TweenScale.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\ColorPicker\ColorLabel.cs" />
-     <Compile Include="Assets\_Scripts\Map\Tables\TablesSpawn.cs" />
      <Compile Include="Assets\Third-party\NavMeshSurface\Examples\Scripts\FreeCam.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\Segment.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\PPIViewer.cs" />
@@ -233,6 +233,7 @@
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\SelectableScaler.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\CooldownButton.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\Circle.cs" />
+     <Compile Include="Assets\_Scripts\Interface\UiManager.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Effects\ShineEffector.cs" />
      <Compile Include="Assets\Third-party\LunarConsole\Scripts\Actions\CAction.cs" />
      <Compile Include="Assets\Third-party\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
@@ -276,7 +277,7 @@
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\RescalingPanels\ResizePanel.cs" />
      <Compile Include="Assets\Third-party\LunarConsole\Scripts\Utils\FileUtils.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\ExtensionsToggle.cs" />
-     <Compile Include="Assets\_Scripts\Player\PointsBar.cs" />
+     <Compile Include="Assets\_Scripts\Interface\PointsBar.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Layout\TileSizeFitter.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Effects\ShaderEffects\UIAdditiveEffect.cs" />
      <Compile Include="Assets\Third-party\AlmostEngine\UltimateScreenshotCreator\Assets\Scripts\ScreenshotCamera.cs" />
@@ -290,6 +291,7 @@
      <Compile Include="Assets\Third-party\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Effects\RaycastMask.cs" />
      <Compile Include="Assets\Third-party\AlmostEngine\UltimateScreenshotCreator\Example\Scripts\ValidationCanvas.cs" />
+     <Compile Include="Assets\_Scripts\Map\Tables\Table.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\RadialSlider.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\ScrollConflictManager.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\RangeSlider.cs" />
@@ -586,7 +588,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Assets/Third-party/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Assets/Third-party/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -940,37 +942,37 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Cinemachine">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.cinemachine.editor">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Projects/FOR JOB/WaiterRace/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
