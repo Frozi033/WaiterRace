@@ -1,29 +1,30 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Animator))]
 public class Enemy : StickmanCore
 {
-    private Vector3 Position;
-    [SerializeField] private float TableDistance = 1.9f;
-    [SerializeField] private List<GameObject> _tables = new List<GameObject>();
-    
+    private Vector3 _position;
+    private float _speed;
+    [SerializeField] private float _tableDistance = 1.9f;
+
     private NavMeshAgent _myAgent;
     private bool DiliveryCheck;
 
     private void Start()
     {
         _myAgent = GetComponent<NavMeshAgent>();
-        _myAnimator = GetComponent<Animator>(); 
-        SetRandomTable();
+        _myAnimator = GetComponent<Animator>();
+        MoveToTable();
         StartCoroutine(EnemyLoop());
         _myAnimator.SetBool("Delivery", true);
-        MoveAnimationSpeed(0.2f);
+    }
+
+    private void Update()
+    {
+        MoveAnimationSpeed(_myAgent.velocity.magnitude);
     }
 
     private IEnumerator EnemyLoop()
@@ -31,19 +32,18 @@ public class Enemy : StickmanCore
         WaitForSeconds c = new WaitForSeconds(0.5f);
         while (true)
         {
-            if (Vector3.Distance(transform.position, Position) <= TableDistance)
+            if (Vector3.Distance(transform.position, _position) <= _tableDistance)
             {
-                SetRandomTable();
+                MoveToTable();
             }
             yield return c;
         } 
     }
 
-    private void SetRandomTable()
+    private void MoveToTable()
     {
-        _randomNumber = Random.Range(0, _tables.Count);
-        Position = _tables[_randomNumber].gameObject.transform.position;
-        _myAgent.SetDestination(Position);
+        _position = GetTable(false);
+        _myAgent.SetDestination(_position);
     }
     
 }

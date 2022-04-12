@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player: StickmanCore
@@ -9,19 +7,20 @@ public class Player: StickmanCore
     [SerializeField] private GameObject _kitchen;
     [SerializeField] private FloatingJoystick _joystick;
 
-    private GameObject _target;
+    private Vector3 _target;
+    private Vector3 _kitchenPos;
     void OnEnable()
     {
         KitchenLogic.DileveryAction += Delivery;
         Table.DileveryIsOver += DeliveryIsOver;
-        _target = _kitchen;
+        _kitchenPos = _kitchen.transform.position;
+        _target = _kitchenPos;
     }
     void Update()
     {
         Move();
-        ArrowDirection(Target: _target);
-        Debug.Log(LifeStatus);
-        
+        ArrowDirection(_target);
+
     }
     private void Move()
     {
@@ -32,9 +31,9 @@ public class Player: StickmanCore
         Move(direction);
     }
     
-    private void Delivery(GameObject Target)
+    private void Delivery(Vector3 Target)
     {
-        //LifeStatus = Status.DeliveringOrder;
+        LifeStatus = Status.DeliveringOrder;
         _tray.SetActive(true);
         _target = Target;
         _myAnimator.SetBool("Delivery", true);
@@ -42,13 +41,14 @@ public class Player: StickmanCore
 
     private void DeliveryIsOver()
     {
+        LifeStatus = Status.Live;
         _tray.SetActive(false);
-        _target = _kitchen;
+        _target = _kitchen.transform.position;
         _myAnimator.SetBool("Delivery", false);
     }
 
-    private void ArrowDirection(GameObject Target)
+    private void ArrowDirection(Vector3 Target)
     {
-        Arrow.transform.LookAt(Target.transform);
+        Arrow.transform.LookAt(Target);
     }
 }

@@ -6,14 +6,12 @@ using UnityEngine;
 public class Table : MonoBehaviour
 {
     private StickmanCore.Status _dilivery;
-    private StickmanCore.Status _live;
 
     public static Action DileveryIsOver;
 
-    private void Awake()
+    private void Start()
     {
         _dilivery = StickmanCore.Status.DeliveringOrder;
-        _live = StickmanCore.Status.Live;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,7 +20,6 @@ public class Table : MonoBehaviour
         {
             DileveryIsOver.Invoke();
             gameObject.tag = "Untagged";
-            StickmanCore.LifeStatus = _live;
         }
     }
 }

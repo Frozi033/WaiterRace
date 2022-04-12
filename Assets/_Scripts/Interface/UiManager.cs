@@ -1,25 +1,31 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class UiManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _text;
+    [SerializeField] private GameObject _deliveryOver;
+    [SerializeField] private Text _text;
+    
+    private float _score;
     private void Awake()
     {
         Table.DileveryIsOver += DileveryIsOver;
+        _text.text = "PlayerTeam: " + _score;
     }
 
     private void DileveryIsOver()
     {
         StartCoroutine(_timeToText());
+        _score++;
+        _text.text = "PlayerTeam: " + _score;
     }
     private IEnumerator _timeToText()
     {
-        _text.SetActive(true);
+        _deliveryOver.SetActive(true);
         yield return new WaitForSeconds(1f);
-        _text.SetActive(false);
+        _deliveryOver.SetActive(false);
     }
 }

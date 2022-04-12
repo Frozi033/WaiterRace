@@ -125,6 +125,7 @@
      <Compile Include="Assets\Third-party\FatMachines\TapticFeedback\Taptic.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Effects\SoftMaskScript.cs" />
      <Compile Include="Assets\Third-party\AlmostEngine\UltimateScreenshotCreator\Assets\Scripts\TextureExporter.cs" />
+     <Compile Include="Assets\_Scripts\Map\Tables\TableList.cs" />
      <Compile Include="Assets\Third-party\AlmostEngine\UltimateScreenshotCreator\Example\Scripts\HideOnCapture.cs" />
      <Compile Include="Assets\Third-party\Epic Toon FX\Demo\ParticleEffectsShowcase\Scripts\ParticleEffectsLibrary.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Layout\CardUI\2D Cards\CardStack2D.cs" />
@@ -277,7 +278,7 @@
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Controls\RescalingPanels\ResizePanel.cs" />
      <Compile Include="Assets\Third-party\LunarConsole\Scripts\Utils\FileUtils.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Utilities\ExtensionsToggle.cs" />
-     <Compile Include="Assets\_Scripts\Interface\PointsBar.cs" />
+     <Compile Include="Assets\_Scripts\Interface\BotsScore.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Layout\TileSizeFitter.cs" />
      <Compile Include="Assets\Third-party\com.unity.uiextensions\Runtime\Scripts\Effects\ShaderEffects\UIAdditiveEffect.cs" />
      <Compile Include="Assets\Third-party\AlmostEngine\UltimateScreenshotCreator\Assets\Scripts\ScreenshotCamera.cs" />
